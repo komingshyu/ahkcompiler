@@ -1827,3 +1827,35 @@ Blockly.Blocks['win_move'] = {
         this.setHelpUrl("");
     }
 };
+
+Blockly.Blocks['pixel_get_color'] = {
+  init: function() {
+    this.appendValueInput("posX")
+        .setCheck("Number")
+        .appendField("獲取座標(");
+    this.appendValueInput("posY")
+        .setCheck("Number")
+        .appendField(",");
+    this.appendDummyInput()
+        .appendField(")的色碼儲存至變數")
+        .appendField(new Blockly.FieldVariable("色碼"), "color_id");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour("#f5bfbf");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+Blockly.Blocks['color_id'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("色碼")
+        .appendField(new Blockly.FieldTextInput("0xFFFFFF"), "color_id");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
